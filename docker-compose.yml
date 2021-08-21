@@ -23,8 +23,6 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: 33333386
     ports:
       - "27017:27017"
-    volumes:
-      - /home/victor/MongoDBDocker/Docker/Volumes/MongoDB:/data/db
     networks:
       - mongo-compose-network
 
