@@ -9,7 +9,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: victor
       MONGO_INITDB_ROOT_PASSWORD: 33333386
     ports:
-      - "27017:27017"
+      - "33033:33033"
     networks:
       - mongo-compose-network
 
