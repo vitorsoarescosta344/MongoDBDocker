@@ -13,19 +13,11 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: admin
     links:
       - mongo
-  application:
-    image: nest-cloud-run:latest
-    networks:
-      - ian-api
-    ports:
-      - 3000:3000
-    links:
-      - mongo
   mongo:
     image: mongo
     container_name: mongo
     networks:
-      - ian-api
+      - mongo-network
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: admin
@@ -35,5 +27,5 @@ services:
       - "./data:/data/db"
 
 networks:
-  ian-api:
+  mongo-network:
     driver: bridge
